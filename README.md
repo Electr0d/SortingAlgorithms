@@ -3,6 +3,7 @@ Sort a generated array of numbers by specifing the size of the array. The progra
 
 
 # Installation
+Note: make sure you have Java installed before proceeding in the installation.
 ```
 git clone https://www.github.com/Electr0d/SortingAlgorithms
 javac -d bin src/*.java
@@ -148,6 +149,14 @@ public void exchange (int[] numbers) {
 ```
 
 # Observations
+## Specs
+All the algorithms are tested on a PC with the following specifications:
+- **Processor**:	Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz, 2901 Mhz, 2 Core(s), 4 Logical Processor(s)
+- **RAM**: 16 GB
+- **OS**: Windows 10 Pro
+  - **Version**: 20H2
+  - **Build**: 19042.685
+- **IDE**: Eclipse
 
 ## Sorting Integers with Minimal Background Processes
 | Array Length | Selection | Insertion | Bubble | Exchange |
