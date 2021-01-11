@@ -378,7 +378,7 @@ public void exchange (int[] numbers) {
 | Integer w/ CPU Load | 374491    | 630535    | 374491   | 838860   |
 | Double w/ CPU Load  | 587202    | 891289    | 131172   | 587202   |
 
-![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/timed/pie_no_process_int.png)
-![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/timed/pie_no_process_double.png)
-![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/timed/pie_process_int.png)
-![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/timed/pie_process_double.png)
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/timed/pie_no_process_int.png)
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/timed/pie_no_process_double.png)
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/timed/pie_process_int.png)
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/timed/pie_process_double.png)
