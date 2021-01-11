@@ -176,7 +176,7 @@ public void exchange (int[] numbers) {
 ![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/int/pie_no_process_elapsed.png)
 ---
 
-## Sorting Doubles with Minimal Backgronud Processes
+## Sorting Doubles with Minimal Background Processes
 | Array Length | Selection | Insertion | Bubble | Exchange |
 |:------------:|:---------:|:---------:|:------:|:--------:|
 | 2            | 0         | 0         | 0      | 0        |
@@ -382,3 +382,108 @@ public void exchange (int[] numbers) {
 ![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/timed/pie_no_process_double.png)
 ![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/timed/pie_process_int.png)
 ![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/timed/pie_process_double.png)
+
+
+
+# FAQ
+1. Which sort seems to be the best “overall” for most purposes? Explain.
+
+The overall best sorting algorithm is “Insertion Sort”. The reason why, is because unlike other sorting algorithms. Insertion Sort passes through the array once.
+Insertion sort splits up the array into 2.The 1st sub-array is sorted and the other sub-array contains the unsorted numbers. The 1st sub-array is gradually filled up as the algorithm goes through the 2nd sub-array.
+
+
+
+2. Which sort appears to be the least efficient? Explain. Why do you think this sort is taught?
+
+Bubble Sort seems to be the least efficient sorting algorithm. This algorithm is taught because of its simple nature, unlike more complex sorting algorithms such as, insertion sort. Bubble sort swaps two integers that are out of order, so if a big number is in the first number, it gradually moves up the array in each loop. Unlike Insertion sort where it is put in its definitive position. The diagram below explains how Insertion sort works in comparison to Bubble sort.
+
+| Pass | arr[0] | arr[1] | arr[2] | arr[3] | arr[4] | arr[5] | arr[6] | arr[7] | arr[8] |
+|:----:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+| 0    | 9      | 7      | 8      | 2      | 4      | 1      | 3      | 5      | 6      |
+| 1    | 7      | 8      | 2      | 4      | 1      | 3      | 5      | 6      | 9      |
+| 2    | 7      | 2      | 4      | 1      | 3      | 5      | 6      | 8      | 9      |
+| 3    | 2      | 4      | 1      | 3      | 5      | 6      | 7      | 8      | 9      |
+| 4    | 2      | 1      | 3      | 4      | 5      | 6      | 7      | 8      | 9      |
+| 5    | 1      | 2      | 3      | 4      | 5      | 6      | 7      | 8      | 9      |
+
+As shown above. High numbers move to the end of the array just like how bubbles move up, hence why it is called “Bubble Sort”.
+
+
+
+3. Under some circumstances, insertion sort can be the most efficient (in time). What would be one of the circumstances? Explain.
+
+When sorting large amounts of doubles. The reason why is because insertion sort puts the number in its definitive position unlike bubble sort where it gradually goes in the proper order.
+The table below shows how Insertion sort performs against other sorting algorithms when sorting Doubles with minimal background processes.
+
+| Array Length | Selection | Insertion | Bubble | Exchange |
+|:------------:|:---------:|:---------:|:------:|:--------:|
+| 2            | 0         | 0         | 0      | 0        |
+| 4            | 0         | 0         | 0      | 0        |
+| 8            | 0         | 0         | 0      | 0        |
+| 16           | 0         | 0         | 0      | 0        |
+| 32           | 0         | 0         | 0      | 0        |
+| 64           | 0         | 0         | 1      | 0        |
+| 128          | 0         | 1         | 0      | 0        |
+| 256          | 0         | 1         | 1      | 1        |
+| 512          | 3         | 2         | 4      | 3        |
+| 1024         | 2         | 3         | 2      | 0        |
+| 2048         | 9         | 3         | 4      | 0        |
+| 4096         | 5         | 2         | 17     | 3        |
+| 8192         | 20        | 6         | 67     | 13       |
+| 16384        | 78        | 27        | 266    | 49       |
+| 32768        | 325       | 105       | 1068   | 180      |
+| 65536        | 1392      | 461       | 4313   | 3102     |
+| 131072       | 5283      | 1944      | 17376  | 12685    |
+| 262144       | 21391     | 8601      | 70456  | 12685    |
+| 524288       | 91607     | 35820     | 310780 | 58218    |
+
+
+
+4. List all the factors you can think of that might affect the time required to sort a file.
+
+The factors that might affect the time required to sort a file/array are:
+- CPU Power
+  - Cores
+  - Threads
+  - Cache size
+  - Clock Speed
+- RAM speed
+-	File/array size
+-	Background and foreground processes
+-	Programming language
+-	Algorithm efficiency
+-	Data type (integer or double)
+-	PC cooling (throttling while sorting can increase sorting times).
+-	Power saving settings on laptops might lock the CPU under a certain clock speed, effecting sorting times
+
+
+
+5. 	Suppose you have two data files with the same kind of data but one file is exactly twice as large as the second (twice as much data). Initially, how do you think the sort times should compare between these files? 
+
+Sorting times differ between each algorithm. Although, generally speaking sorting times grow exponentially as the file size doubles.
+
+
+
+6. Test #5 above: Double the size of the array and repeat the test. How did the sort times change? Explain. Can you explain this “discrepancy”?
+
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/int/no_process_elapsed_full.png)
+Sorting times grew exponentially as predicted. The reason why the sorting times double as the file size double is because sorting algorithms have to do more operations to move a number to its proper position, then more numbers around it to their proper position. Doubling the array size means more numbers around it need to gradually move into their position which takes a toll on sorting time and does not necessarily mean doubling the sorting time or passes.
+
+
+
+7. Run many YouTube (or other) videos in the background. Load a few other apps. Play some music (with the volume off or with headphones), run some other programs or do some video / picture editing. Try to make the CPU work to slow down your computer. Run your sorting algorithms again and see what effect the background applications had on the sort time. Record the time difference (the increase in amount of times the sorts took).
+
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/int/difference.png)
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/int/pie_difference.png)
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/double/difference.png)
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/double/pie_difference.png)
+
+8. Change the data type of the numbers from integer to double. How much did this affect the sort times?
+
+Sorting times increased when sorting doubles. The trend can be visualized below:
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/double/no_process_elapsed.png)
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/elapsed.png)
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/difference_bubble.png)
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/no_process_difference.png)
+![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/process_difference.png)
+As shown above double sorting time is sometimes shorter and sometimes longer than double sorting time. Generally speaking, sorting times are longer, though. The likely cause is that Integers are easier to compare due to the lack of decimal points.
