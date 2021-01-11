@@ -413,6 +413,7 @@ As shown above. High numbers move to the end of the array just like how bubbles 
 3. Under some circumstances, insertion sort can be the most efficient (in time). What would be one of the circumstances? Explain.
 
 When sorting large amounts of doubles. The reason why is because insertion sort puts the number in its definitive position unlike bubble sort where it gradually goes in the proper order.
+
 The table below shows how Insertion sort performs against other sorting algorithms when sorting Doubles with minimal background processes.
 
 | Array Length | Selection | Insertion | Bubble | Exchange |
@@ -467,6 +468,7 @@ Sorting times differ between each algorithm. Although, generally speaking sortin
 6. Test #5 above: Double the size of the array and repeat the test. How did the sort times change? Explain. Can you explain this “discrepancy”?
 
 ![](https://github.com/Electr0d/SortingAlgorithms/blob/master/docs/graphs/int/no_process_elapsed_full.png)
+
 Sorting times grew exponentially as predicted. The reason why the sorting times double as the file size double is because sorting algorithms have to do more operations to move a number to its proper position, then more numbers around it to their proper position. Doubling the array size means more numbers around it need to gradually move into their position which takes a toll on sorting time and does not necessarily mean doubling the sorting time or passes.
 
 
