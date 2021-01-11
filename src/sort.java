@@ -1,76 +1,69 @@
 
 public class sort {
-	public void exchange (int[] num) {
-	     int i, j;
-	     int temp;  //be sure that the temp variable is the same "type" as the array
-	     for (i = 0; i < num.length - 1; i++)  {
-	          for (j = i + 1; j < num.length; j++) {
-	               if(num[i] > num[j])         //sorting into descending order
-	               {
-	                       temp = num[i];   //swapping
-	                       num[i] = num[j];
-	                       num[j] = temp; 
-	                }           
-	          }
-	     }
+	public void exchange (int[] numbers) {
+		int temp;  //be sure that the temp variable is the same "type" as the array
+		for (int i = 0; i < numbers.length - 1; i++)  {
+			for (int j = i + 1; j < numbers.length; j++) {
+				if(numbers[i] > numbers[j])         //sorting into descending order
+				{
+					temp = numbers[i];   //swapping
+					numbers[i] = numbers[j];
+					numbers[j] = temp; 
+				}           
+			}
+		}
 	}	
 	
 	
-	public void bubble(int[] num) {
-	     int j;
-	     boolean flag = true;   // set flag to true to begin first pass
-	     int temp;   //holding variable
+	public void bubble(int[] numbers) {
+		int i, temp;
+		boolean flag = true;   // set flag to true to begin first pass
+	
+		while (flag) {
+			flag = false;    //set flag to false awaiting a possible swap
+			for(i = 0; i < numbers.length -1; i++)
+			{
+				// change to > for ascending sort
+				if(numbers[i] > numbers[i + 1]) {
+					temp = numbers[i];                //swap elements
+					numbers[i] = numbers[i + 1];
+					numbers[i + 1] = temp;
+					flag = true;              //shows a swap occurred 
+				}
+			}
+		}
+	}
+	
+	public int[] selection (int [] numbers) {
+		int first, temp;
+		for (int i = 0; i < numbers.length; i++) {
+			first = 0;   //initialize to subscript of first element
 
-	     while (flag)
-	     {
-	            flag= false;    //set flag to false awaiting a possible swap
-	            for(j=0;  j < num.length -1;  j++)
-	            {
-	                   if (num[j] > num[j+1])   // change to > for ascending sort
-	                   {
-	                           temp = num[j];                //swap elements
-	                           num[j] = num[j+1];
-	                           num[j+1] = temp;
-	                          flag = true;              //shows a swap occurred 
-	                  }
-	            }
-	      }
+			// locate smallest element between positions 1 and i.
+			for(int j = 1; j <= i; j ++) {
+				// switch to "<" for descending order   
+				if(numbers[j] > numbers[first]) first = j;
+			}
+			temp = numbers[first]; //swap smallest found with element in position i.
+			numbers[first] = numbers[i];
+			numbers[i] = temp;
+		}
+		return numbers;
 	}
 	
-	public int[] selection (int [] num)
-	{
-	     int i, j, first;
-	     int temp; 
-	     for (i = 0; i < num.length; i++) 
-	     {
-	          first = 0;   //initialize to subscript of first element
-	          for(j = 1; j <= i; j ++)   //locate smallest element between positions 1 and i.
-	          {
-	               if(num[j] > num[first]) // switch to "<" for descending order   
-	                 first = j;
-	          }
-	          temp = num[first];   //swap smallest found with element in position i.
-	          num[first] = num[i];
-	          num[i] = temp; 
-	      }
-	     return num;
-	}
-	
-	public void insertion(int [] num)
-	{
-	     int j, i;                     // the number of items sorted so far
-	     int key;                // the item to be inserted
+	public void insertion(int [] numbers) {
+		int j, i;
+		int key;
 
-	     for (j = 1; j < num.length; j++)    // Start with 1 (not 0)
-	    {
-	           key = num[j];
-	           for(i = j - 1; (i >= 0) && (num[i] < key); i--)   // Smaller values are moving up
-	          {
-	                 num[i+1] = num[i];
-	          }
-	         num[i+1] = key;    // Put the key in its proper location
-	     }
+		// Start with 1 (not 0)
+		for (j = 1; j < numbers.length; j++) {
+				key = numbers[j];
+				for(i = j - 1; (i >= 0) && (numbers[i] < key); i--) {
+				// Smaller values are moving up
+					numbers[i + 1] = numbers[i];
+			}
+			numbers[i + 1] = key;    // Put the key in its proper location
+		}
 	}
-	
-	
+
 }
