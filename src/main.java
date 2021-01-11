@@ -12,12 +12,24 @@ public class main {
 		System.out.print("Enter array size:\n> ");
 		String strAnswer = scanner.nextLine();
 		int answer = Integer.parseInt(strAnswer);
+		if(answer == 0) {
+			int size = 2;
+			while(size < 600000) {
+				System.out.println("------------------------------------------------------------------------------------------------------------------------");
+				sortAll(size);
+				size *= 2;
+			}
+		} else {
+			sortAll(answer);
+		}
 		
+		
+	}
+	static void sortAll(int size) {
 		// generate array
-		System.out.println("Generating an array with length: " + answer);
-		int[] numbers = generateUniqueNumbers(answer);
+		System.out.println("Generating an array with length: " + size);
+		int[] numbers = generateUniqueNumbers(size);
 		System.out.println("Generated an array with length: " + numbers.length);
-		
 		
 		
 		
@@ -55,11 +67,7 @@ public class main {
 		t1 = System.currentTimeMillis();
 		elapsedTime = t1 - t0;
 		System.out.println("[ Exchange Sort ] Sorted array. Elapsed time: " + elapsedTime);
-		
-		
-		
 	}
-	
 	
 	
 	static int[] generateUniqueNumbers(int size) {
